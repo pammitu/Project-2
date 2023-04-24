@@ -13,9 +13,9 @@ router.post('/', booksController.create);
 router.get('/', booksController.index);
 
 //show route -  must go last
-router.get('/:id', booksController.show);
+//router.get('/:id', booksController.show);
 
 //adding quotes
-router.post('/:id/quotes', booksController.show);
+//router.post('/:id/quotes', booksController.show);
 
 module.exports = router;
