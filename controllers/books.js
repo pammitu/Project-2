@@ -18,7 +18,23 @@ async function create(req, res) {
     }
 }
 
+async function index(req, res) {
+    try {
+        const allBooks = await Book.find({});
+        
+        res.render('books/index', { 
+            books: allBooks, 
+            title: 'All Books'
+        });
+    } catch (error) {
+        // during development mode; console.log the error 
+        console.log(error);
+        res.render('error', {title: 'Something Went Wrong'});
+    }
+}
+
 module.exports = {
     new: newBook,
-    create
+    create,
+    index
 };
