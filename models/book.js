@@ -3,9 +3,9 @@ const Schema = mongoose.Schema;
 
 
 const bookSchema = new Schema({
+    coverImage: String,
     title: String,
     author: String,
-    coverImage: String,
     summary: String,
     reviews: [reviewSchema],
     notableQuotes: [{
@@ -28,4 +28,4 @@ const reviewSchema = new Schema({
 });
 
 //export book model
-module.exports = mongoose.model('Book',bookSchema)
+module.exports = mongoose.model('Book', bookSchema)
