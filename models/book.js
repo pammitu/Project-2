@@ -15,16 +15,27 @@ const reviewSchema = new Schema({
 });
 
 const bookSchema = new Schema({
-    coverImage: {String},
-    title: {String},
-    author: {String},
-    summary: {String},
+    coverImage: {
+    type: String
+    },
+    title: {
+         type: String,
+        required: true
+     },
+    author: {
+        type: String,
+        required: true
+    },
+    summary: {
+        type: String,
+        required: true
+    },
     reviews: [reviewSchema],
-    notableQuotes: [{
+     notableQuotes: [{
         type: Schema.Types.ObjectId,
         ref: 'Quote'
-    }], //use an array of strings here to store separate quotes, getting info from somewhere else
-});
+    }]
+    }); //use an array of strings here to store separate quotes, getting info from somewhere else
 
 
 //export book model

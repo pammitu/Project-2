@@ -11,7 +11,9 @@ async function create(req, res) {
     try {
         const book = await Book.create(req.body);
 
-        res.redirect(`/books/${book._id}`);
+        res.redirect(`/books/${book._id}`, {
+        book: req.params.id,
+        title: book.title});
     } catch (error) {
         console.log(error);
         res.render('error', {title: 'Something went wrong'});
