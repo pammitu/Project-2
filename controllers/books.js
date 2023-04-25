@@ -10,10 +10,7 @@ function newBook(req, res) {
 async function create(req, res) {
     try {
         const book = await Book.create(req.body);
-
-        res.redirect(`/books/${book._id}`, {
-        book: req.params.id,
-        title: book.title});
+        res.redirect(`/books/${book._id}`);
     } catch (error) {
         console.log(error);
         res.render('error', {title: 'Something went wrong'});
@@ -35,8 +32,23 @@ async function index(req, res) {
     }
 }
 
+async function show(req, res) {
+    try {
+        const foundBook = await Book.findById(req.params.id)//.populate('notableQuotes');
+
+        res.render('books/show', {
+            book: foundBook,
+            title: `${foundBook.title}`,
+        });
+    } catch (error) {
+        console.log(error);
+        res.render('error', {title: 'Something went wrong'});
+    }
+}
+
 module.exports = {
     new: newBook,
     create,
-    index
+    index,
+    show
 };

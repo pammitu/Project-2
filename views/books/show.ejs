@@ -4,7 +4,7 @@
 <body>
     <%- include('../partials/header') %>
 
-    <h1><%= book.title %></h1>
+    <h2><%= book.title %></h2>
 
     <section>
         <table>
@@ -17,7 +17,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><%= book.coverImage %></td>
+                    <td><img src="<%= book.coverImage %>" alt="Cover Image"></td>
                     <td><%= book.author %></td>
                     <td><%= book.summary %></td>
                 </tr>
@@ -26,7 +26,7 @@
     </section>
     
     <section>
-        <h2>Reviews</h2>
+        <h3>Reviews</h3>
         <form action="/books/<%= book._id %>/reviews" method="POST">
             <label>
                 Review:
@@ -73,7 +73,7 @@
     </section>
 
     <section>
-        <h2>Notable Quotes</h2>
+        <h3>Notable Quotes</h3>
         <form action="/books/<%= book._id %>/quotes" method="POST">
             <label>
                 Quote:
@@ -87,7 +87,7 @@
                 Page Number:
                 <input type="number" name="pageNumber">
             </label>
-            <button type="submit">"Add Quote</button>
+            <button type="submit">Add Quote</button>
         </form>
 
         <% if(book.notableQuotes.length) { %>
