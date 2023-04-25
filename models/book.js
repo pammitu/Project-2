@@ -15,10 +15,10 @@ const reviewSchema = new Schema({
 });
 
 const bookSchema = new Schema({
-    coverImage: String,
-    title: String,
-    author: String,
-    summary: String,
+    coverImage: {String},
+    title: {String},
+    author: {String},
+    summary: {String},
     reviews: [reviewSchema],
     notableQuotes: [{
         type: Schema.Types.ObjectId,
