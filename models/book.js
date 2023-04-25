@@ -12,7 +12,7 @@ const reviewSchema = new Schema({
         max: 5,
         default: 5
     } 
-});
+}, { timestamps: true });
 
 const bookSchema = new Schema({
     coverImage: { 
