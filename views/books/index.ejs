@@ -3,11 +3,11 @@
 <%- include('../partials/head') %>
 <body>
 <%- include('../partials/header') %>
-
+<h1>Book Index</h1>
 <section id="book-index">
     <ul> <% books.forEach(b => { %>
             <li>
-                <a href="/books/<%= b._id %>"><img src="<%= book.coverImage %>" alt="<%= book.title %>" width="100" height="100"></a>
+                <a href="/books/<%= b._id %>"><img src="<%= b.coverImage %>" alt="<%= b.title %>" width="100" height="100"></a>
             </li>
         <% }) %>
     </ul>

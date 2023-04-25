@@ -22,7 +22,7 @@ async function index(req, res) {
     try {
         const allBooks = await Book.find({});
         
-        res.render('books/index', { 
+        res.render('books', { 
             books: allBooks, 
             title: 'All Books'
         });
