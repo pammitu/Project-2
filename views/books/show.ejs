@@ -79,11 +79,11 @@
             </label>
             <label>
                 Character:
-                <input type="text" name="character">
+                <input type="text" name="characterName">
             </label>
             <label>
                 Page Number:
-                <input type="number" name="pageNumber">
+                <input type="number" name="pageNum">
             </label>
             <button type="submit">Add Quote</button>
         </form>
@@ -100,7 +100,7 @@
                 <tbody>
                     <% book.notableQuotes.forEach(q => { %>
                         <tr>
-                            <td><%= q.quote %></td>
+                            <td><%= q.content %></td>
                             <td><%= q.characterName %></td>
                             <td><%= q.pageNum %></td>
                         </tr>

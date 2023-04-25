@@ -1,5 +1,4 @@
 const Book = require('../models/book');
-const Quote = require('../models/quotes');
 
 function newBook(req, res) {
     res.render('books/new', {
