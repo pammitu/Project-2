@@ -1,6 +1,18 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const quoteSchema = new Schema({
+    pageNum: {
+        type: Number
+    },
+    characterName: {
+        type: String
+    },
+    content: {
+        type: String
+    }
+})
+
 const reviewSchema = new Schema({
     content: {
         type: String,
@@ -12,7 +24,7 @@ const reviewSchema = new Schema({
         max: 5,
         default: 5
     } 
-});
+}, { timestamps: true });
 
 const bookSchema = new Schema({
     coverImage: { 
@@ -32,12 +44,8 @@ const bookSchema = new Schema({
         required: true
     },
     reviews: [reviewSchema],
-     notableQuotes: [{
-        type: Schema.Types.ObjectId,
-        ref: 'Quote'
-    }]
-    }); //use an array of strings here to store separate quotes, getting info from somewhere else
-
+    notableQuotes: [quoteSchema]
+    });
 
 //export book model
 module.exports = mongoose.model('Book', bookSchema)
