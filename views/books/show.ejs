@@ -3,29 +3,22 @@
 <%- include('../partials/head') %>
 <body>
     <%- include('../partials/header') %>
-
-    <h2><%= book.title %></h2>
-
-    <section>
-        <table>
-            <thead>
-                <tr>
-                    <th>Cover Image</th>
-                    <th>Author</th>
-                    <th>Summary</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><img src="<%= book.coverImage %>" alt="Cover Image"></td>
-                    <td><%= book.author %></td>
-                    <td><%= book.summary %></td>
-                </tr>
-            </tbody>
-        </table>
+    <section class="book-details">
+        <img src="<%= book.coverImage %>" alt="Cover Image">
+        <div class="book-details-info">
+            <h2><%= book.title %></h2>
+          <div>
+            Author: <%=book.author %>
+          </div>
+          <div>
+            Summary: <%=<book.summary %>
+          </div>
+        </div>
     </section>
     
-    <section>
+
+
+    <section class="reviews-wrapper">
         <h3>Reviews</h3>
 
         <% if(book.reviews.length) { %>
@@ -70,7 +63,7 @@
         </form>
     </section>
 
-    <section>
+    <section class="quotes-wrapper">
         <h3>Notable Quotes</h3>
         <form action="/books/<%= book._id %>/quotes" method="POST">
             <label>
