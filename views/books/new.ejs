@@ -4,23 +4,23 @@
 <body>
 <%- include('../partials/header') %>
 
+<div id="newbookContent">
+    <form action="/books" method="POST">
+        <label>Title:<input type="text" name="title">
+        </label><br>
+        <label>Author:
+            <input type="text" name="author">
+        </label><br>
+        <label>Summary:
+            <input type= "text" name="summary" cols="20" rows="10" >
+        </label><br>
+        <label for="img">Upload Image URL:</label>
+        <input type="text" name="coverImage">
+        <br>
+        <button type="submit">Add Book</button>
+    </form>
+</div>
 
-<form action="/books" method="POST">
-    <label>Title:
-        <input type="text" name="title">
-    </label><br>
-    <label>Author:
-        <input type="text" name="author">
-    </label><br>
-    <label>Summary:
-        <input type= "text" name="summary" cols="20" rows="10" >
-
-    </label><br>
-    <label for="img">Upload cover image:</label>
-    <input type="file" name="coverImage" accept="image/*">
-    <br>
-    <button type="submit">Add Book</button>
-</form>
 
 <%- include('../partials/footer') %>
 </body>

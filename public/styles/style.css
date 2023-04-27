@@ -1,12 +1,11 @@
 *{
-    
+    color: #2f3030;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-
 }
 
-body{
+body {
     background-color: #FAEFE4;
 }
 
@@ -31,7 +30,7 @@ header h1 {
 }
 
 header h1 a{
-    color:#000000;
+    color: #2f3030;
     font-size: 36px;
     font-weight: bold;
     text-decoration: none;
@@ -47,12 +46,21 @@ header nav{
 header nav a {
     margin-left: 1rem;
     text-decoration: none;
-    color: #000;
+    color: #2f3030;
     font-size: 15px;
 }
 
 header nav a:hover {
     text-decoration: underline;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: small;
+    padding: 10px;
 }
 
 #book-index ul {
@@ -81,16 +89,14 @@ header nav a:hover {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
+    background-color:rgb(201, 219, 220, 0.7);
+    padding: 20px;
 }
- .column {
+
+.column {
     flex: 33.33%;
  }
 
-.cover-image{
-    width: 20%;
-    margin-right: 40px;
-} 
- 
 .book-details-info {
     width: 60%;
     display: flex;
@@ -102,9 +108,110 @@ header nav a:hover {
     border: 5px solid #9EC0C2;
     border-radius: 5px;
     box-shadow: 0 0 10px #9EC0C2;
+    width: 175px;
+    height: 275px;
 }
 
+#newbookContent {
+    border-radius: 5px;
+    background-color:rgb(201, 219, 220, 0.7);
+    padding: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-table {
-    padding: 0;
+#newbookContent input[type=text], #newbookContent select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#newbookContent button[type=submit] {
+    width: 100%;
+    background-color: #D9826A;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+#newbookContent button[type=submit]:hover {
+    background-color: #B15044;
+  }
+
+#newbookContent input::file-selector-button {
+    background-color: #D9826A;
+    color: white;
+    padding: 10px 18px;
+    margin: 4px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#newbookContent input::file-selector-button:hover {
+    background-color:  #B15044;
+}
+
+#quotes-wrapper {
+    font-size: smaller;
+}
+
+#quotes-wrapper > h4 {
+    margin-bottom: 7px;
+}
+
+#quotes-wrapper p {
+    font-style: italic;
+}
+
+#quotes-wrapper hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#quotes-wrapper button[type=submit] {
+    font-size: smaller;
+    background-color: #D9826A;
+    color: white;
+    padding: 5px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+#quotes-wrapper button[type=submit]:hover {
+    background-color:  #B15044;
+}
+
+.reviews-wrapper {
+    padding: 20px;
+    width: 100%;
+}
+
+.reviews-wrapper button[type=submit] {
+    font-size: smaller;
+    background-color: #D9826A;
+    color: white;
+    padding: 5px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.reviews-wrapper button[type=submit]:hover {
+    background-color:  #B15044;
+}
+
+#rating-select {
+    width: 20px;
 }
