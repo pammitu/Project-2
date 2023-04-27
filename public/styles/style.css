@@ -1,0 +1,96 @@
+*{
+    
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+
+body{
+    background-color: #FAEFE4;
+}
+
+.title-wrapper {
+    background-color: #D9826B;
+    padding: 15px;
+}
+
+/* header {} */
+
+nav {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+header h1 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+header h1 a{
+    color:#000000;
+    font-size: 36px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+header nav{
+    padding: 15px 0;
+    background-color: #FAEFE4;
+    border-top: 2px solid #D9826B;
+    margin-top: -15px;
+}
+
+header nav a {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: #000;
+    font-size: 15px;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+#book-index ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 10;
+    margin: 10;
+    margin-top: 30px;
+}
+
+#book-index li {
+    flex: 0 0 calc(20% - 50px);
+    margin: 20px;
+    box-sizing: border-box;
+}
+
+#book-index img {
+    border: 5px solid #9EC0C2;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #9EC0C2;
+}
+
+.book-details{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 20px;
+   
+}
+
+.book-details img {
+    border: 5px solid #9EC0C2;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #9EC0C2;
+}
+
+table {
+    padding: 0;
+}
