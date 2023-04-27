@@ -97,11 +97,6 @@ footer {
     flex: 33.33%;
  }
 
-.cover-image {
-    width: 20%;
-    margin-right: 40px;
-} 
-
 .book-details-info {
     width: 60%;
     display: flex;
@@ -126,7 +121,7 @@ footer {
     margin-right: auto;
 }
 
-#newbookContent input[type=text], select {
+#newbookContent input[type=text], #newbookContent select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -162,4 +157,61 @@ footer {
 }
 #newbookContent input::file-selector-button:hover {
     background-color:  #B15044;
+}
+
+#quotes-wrapper {
+    font-size: smaller;
+}
+
+#quotes-wrapper > h4 {
+    margin-bottom: 7px;
+}
+
+#quotes-wrapper p {
+    font-style: italic;
+}
+
+#quotes-wrapper hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#quotes-wrapper button[type=submit] {
+    font-size: smaller;
+    background-color: #D9826A;
+    color: white;
+    padding: 5px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+}
+
+#quotes-wrapper button[type=submit]:hover {
+    background-color:  #B15044;
+}
+
+.reviews-wrapper {
+    padding: 20px;
+    width: 100%;
+}
+
+.reviews-wrapper button[type=submit] {
+    font-size: smaller;
+    background-color: #D9826A;
+    color: white;
+    padding: 5px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.reviews-wrapper button[type=submit]:hover {
+    background-color:  #B15044;
+}
+
+#rating-select {
+    width: 20px;
 }

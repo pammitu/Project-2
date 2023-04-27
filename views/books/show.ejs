@@ -21,44 +21,34 @@
         </div>
     
         <div class="column" id="quotes-wrapper">
-            <h3>Notable Quotes</h3>
-            <form action="/books/<%= book._id %>/quotes" method="POST">
-            <label>
-                Quote:<textarea name="content" cols="20" rows="10" required></textarea>
-            </label>
-            <label>
-                Character:
-                <input type="text" name="characterName">
-            </label>
-            <label>
-                Page Number:
-                <input type="number" name="pageNum">
-            </label>
-            <button type="submit">Add Quote</button>
-            </form>
-
+            <h4>Notable Quotes</h4>
+            
             <% if(book.notableQuotes.length) { %>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Quote</th>
-                            <th>Character</th>
-                            <th>Page Number</th>
-                        </tr>
-                    </thead>
-                    <tbody>
                         <% book.notableQuotes.forEach(q => { %>
-                            <tr>
-                                <td><%= q.content %></td>
-                                <td><%= q.characterName %></td>
-                                <td><%= q.pageNum %></td>
-                            </tr>
+                            <p><%= q.content %></p>
+                            <p>- <%= q.characterName %> (<%= q.pageNum %>)</p>
+                            <hr>
                         <% }) %>
-                    </tbody>
-                </table>
             <% } else { %>
-                <h5>No Notable Quotes</h5>
+                <strong>No Notable Quotes</strong>
             <% } %>
+
+            <form action="/books/<%= book._id %>/quotes" method="POST">
+                <label>
+                    Quote: <textarea name="content" cols="20" rows="3" required></textarea>
+                </label>
+                <br>
+                <label>
+                    Character:
+                    <input type="text" name="characterName">
+                </label>
+                <br>
+                <label>
+                    Page Number:
+                    <input type="number" name="pageNum">
+                </label>
+                <button type="submit">Add Quote</button>
+            </form>
         </div>
 </section>
 
@@ -66,22 +56,19 @@
         <h3>Reviews</h3>
 
         <% if(book.reviews.length) { %>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Review</th>
-                        <th>Rating</th>
-                    </tr>
-                </thead>
-                <tbody>
+            <% let total = 1 %>
                     <% book.reviews.forEach(r => { %>
-                        <tr>
+                    
+                        <!-- <tr>
                             <td><%= r.createdAt.toLocaleDateString() %></td>
                             <td><%= r.content %></td>
                             <td><%= r.rating %></td>
-                        </tr>
-                    <% }) %>
+                        </tr> -->
+                        <p>User <%= total %>: "<%= r.content %>"
+                            <% for (let i = 1; i <= r.rating; i++ ) { %>
+                            &starf; <% } %>
+                        <% total++ %>
+                    <% }) %> </p>
                 </tbody>
             </table>
         <% } else { %>
@@ -91,11 +78,11 @@
         <form action="/books/<%= book._id %>/reviews" method="POST">
             <label>
                 Review:
-                <textarea name="content" cols="20" rows="10" required></textarea>
+                <textarea name="content" cols="20" rows="3" required></textarea>
             </label>
             <label>
                 Rating
-                <select name="rating">
+                <select id="rating-select" name="rating">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -103,7 +90,7 @@
                     <option value="5" selected>5</option>
                 </select>
             </label>
-            <input type="submit" value="Add Review">
+            <button type="submit">Add Review</button>
         </form>
     </section>
 

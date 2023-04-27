@@ -28,8 +28,7 @@ const reviewSchema = new Schema({
 
 const bookSchema = new Schema({
     coverImage: { 
-    data:Buffer,
-    Type: String
+        type: String
     },
     title: {
          type: String,
