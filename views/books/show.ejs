@@ -4,19 +4,64 @@
 <body>
     <%- include('../partials/header') %>
     <section class="book-details">
-        <img src="<%= book.coverImage %>" alt="Cover Image">
-        <div class="book-details-info">
+        <div class="column" id="cover-image">
+            <img src="<%= book.coverImage %>" alt="Cover Image">
+        </div>
+        
+        <div class="column" id="book-details-info">
             <h2><%= book.title %></h2>
-          <div>
-            Author: <%=book.author %>
+          <div class="author">
+            <strong>Author:</strong> <%=book.author %>
           </div>
-          <div>
-            Summary: <%=<book.summary %>
+          <div class="summary">
+            <strong>Summary:</strong>
+            <p><%= book.summary %></p>
           </div>
         </div>
-    </section>
     
 
+    <section class="column" id="quotes-wrapper">
+        <h3>Notable Quotes</h3>
+        <form action="/books/<%= book._id %>/quotes" method="POST">
+            <label>
+                Quote:
+                <textarea name="content" cols="20" rows="10" required></textarea>
+            </label>
+            <label>
+                Character:
+                <input type="text" name="characterName">
+            </label>
+            <label>
+                Page Number:
+                <input type="number" name="pageNum">
+            </label>
+            <button type="submit">Add Quote</button>
+        </form>
+
+        <% if(book.notableQuotes.length) { %>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Quote</th>
+                        <th>Character</th>
+                        <th>Page Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% book.notableQuotes.forEach(q => { %>
+                        <tr>
+                            <td><%= q.content %></td>
+                            <td><%= q.characterName %></td>
+                            <td><%= q.pageNum %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <h5>No Notable Quotes</h5>
+        <% } %>
+    </section>
+</section>
 
     <section class="reviews-wrapper">
         <h3>Reviews</h3>
@@ -61,48 +106,6 @@
             </label>
             <input type="submit" value="Add Review">
         </form>
-    </section>
-
-    <section class="quotes-wrapper">
-        <h3>Notable Quotes</h3>
-        <form action="/books/<%= book._id %>/quotes" method="POST">
-            <label>
-                Quote:
-                <textarea name="content" cols="20" rows="10" required></textarea>
-            </label>
-            <label>
-                Character:
-                <input type="text" name="characterName">
-            </label>
-            <label>
-                Page Number:
-                <input type="number" name="pageNum">
-            </label>
-            <button type="submit">Add Quote</button>
-        </form>
-
-        <% if(book.notableQuotes.length) { %>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Quote</th>
-                        <th>Character</th>
-                        <th>Page Number</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% book.notableQuotes.forEach(q => { %>
-                        <tr>
-                            <td><%= q.content %></td>
-                            <td><%= q.characterName %></td>
-                            <td><%= q.pageNum %></td>
-                        </tr>
-                    <% }) %>
-                </tbody>
-            </table>
-        <% } else { %>
-            <h5>No Notable Quotes</h5>
-        <% } %>
     </section>
 
     <%- include('../partials/footer') %>
