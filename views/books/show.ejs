@@ -58,12 +58,6 @@
         <% if(book.reviews.length) { %>
             <% let total = 1 %>
                     <% book.reviews.forEach(r => { %>
-                    
-                        <!-- <tr>
-                            <td><%= r.createdAt.toLocaleDateString() %></td>
-                            <td><%= r.content %></td>
-                            <td><%= r.rating %></td>
-                        </tr> -->
                         <p>User <%= total %>: "<%= r.content %>"
                             <% for (let i = 1; i <= r.rating; i++ ) { %>
                             &starf; <% } %>
