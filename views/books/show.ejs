@@ -3,6 +3,7 @@
 <%- include('../partials/head') %>
 <body>
     <%- include('../partials/header') %>
+
     <section class="book-details">
         <div class="column" id="cover-image">
             <img src="<%= book.coverImage %>" alt="Cover Image">
@@ -20,7 +21,7 @@
         </div>
     
 
-    <section class="column" id="quotes-wrapper">
+        <section class="column" id="quotes-wrapper">
         <h3>Notable Quotes</h3>
         <form action="/books/<%= book._id %>/quotes" method="POST">
             <label>
