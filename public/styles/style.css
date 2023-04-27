@@ -15,8 +15,6 @@ body{
     padding: 15px;
 }
 
-/* header {} */
-
 nav {
     display: flex;
     align-items: flex-start;
@@ -80,16 +78,32 @@ header nav a:hover {
 
 .book-details{
     display: flex;
-    justify-content: flex-start;
-    margin-left: 20px;
-   
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
 }
+ .column {
+    flex: 33.33%;
+ }
+
+.cover-image{
+    width: 20%;
+    margin-right: 40px;
+} 
+ 
+.book-details-info {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+} 
 
 .book-details img {
     border: 5px solid #9EC0C2;
     border-radius: 5px;
     box-shadow: 0 0 10px #9EC0C2;
 }
+
 
 table {
     padding: 0;
