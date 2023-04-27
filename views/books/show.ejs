@@ -11,22 +11,20 @@
         
         <div class="column" id="book-details-info">
             <h2><%= book.title %></h2>
-          <div class="author">
+            <div class="author">
             <strong>Author:</strong> <%=book.author %>
-          </div>
-          <div class="summary">
+            </div>
+            <div class="summary">
             <strong>Summary:</strong>
             <p><%= book.summary %></p>
-          </div>
+            </div>
         </div>
     
-
-        <section class="column" id="quotes-wrapper">
-        <h3>Notable Quotes</h3>
-        <form action="/books/<%= book._id %>/quotes" method="POST">
+        <div class="column" id="quotes-wrapper">
+            <h3>Notable Quotes</h3>
+            <form action="/books/<%= book._id %>/quotes" method="POST">
             <label>
-                Quote:
-                <textarea name="content" cols="20" rows="10" required></textarea>
+                Quote:<textarea name="content" cols="20" rows="10" required></textarea>
             </label>
             <label>
                 Character:
@@ -37,31 +35,31 @@
                 <input type="number" name="pageNum">
             </label>
             <button type="submit">Add Quote</button>
-        </form>
+            </form>
 
-        <% if(book.notableQuotes.length) { %>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Quote</th>
-                        <th>Character</th>
-                        <th>Page Number</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <% book.notableQuotes.forEach(q => { %>
+            <% if(book.notableQuotes.length) { %>
+                <table>
+                    <thead>
                         <tr>
-                            <td><%= q.content %></td>
-                            <td><%= q.characterName %></td>
-                            <td><%= q.pageNum %></td>
+                            <th>Quote</th>
+                            <th>Character</th>
+                            <th>Page Number</th>
                         </tr>
-                    <% }) %>
-                </tbody>
-            </table>
-        <% } else { %>
-            <h5>No Notable Quotes</h5>
-        <% } %>
-    </section>
+                    </thead>
+                    <tbody>
+                        <% book.notableQuotes.forEach(q => { %>
+                            <tr>
+                                <td><%= q.content %></td>
+                                <td><%= q.characterName %></td>
+                                <td><%= q.pageNum %></td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            <% } else { %>
+                <h5>No Notable Quotes</h5>
+            <% } %>
+        </div>
 </section>
 
     <section class="reviews-wrapper">

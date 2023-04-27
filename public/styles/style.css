@@ -89,16 +89,19 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
+    background-color:rgb(201, 219, 220, 0.7);
+    padding: 20px;
 }
- .column {
+
+.column {
     flex: 33.33%;
  }
 
-.cover-image{
+.cover-image {
     width: 20%;
     margin-right: 40px;
 } 
- 
+
 .book-details-info {
     width: 60%;
     display: flex;
@@ -110,6 +113,8 @@ footer {
     border: 5px solid #9EC0C2;
     border-radius: 5px;
     box-shadow: 0 0 10px #9EC0C2;
+    width: 175px;
+    height: 275px;
 }
 
 #newbookContent {
