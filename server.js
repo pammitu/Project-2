@@ -21,6 +21,11 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false })); // this creates req.body from an HTML form submission
 
 // mount routes
+
+app.get('/', (req, res) => {
+    res.redirect('/books');
+});
+
 app.use('/books', booksRoutes);
 app.use('/', reviewsRoutes);
 app.use('/', quotesRoutes);
