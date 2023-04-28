@@ -1,0 +1,17 @@
+<!DOCTYPE html> 
+<html>
+<%- include('../partials/head') %>
+<body>
+<%- include('../partials/header') %>
+<section id="book-index">
+    <ul> <% books.forEach(b => { %>
+            <li>
+                <a href="/books/<%= b._id %>"><img src="<%= b.coverImage %>" alt="<%= b.title %>" width="130" height="170"></a>
+            </li>
+        <% }) %>
+    </ul>
+</section>
+
+<%- include('../partials/footer') %>
+</body>
+</html>

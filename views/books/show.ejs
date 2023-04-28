@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %>
+<body>
+    <%- include('../partials/header') %>
+
+    <section class="book-details">
+        <div class="column" id="cover-image">
+            <img src="<%= book.coverImage %>" alt="Cover Image">
+        </div>
+        
+        <div class="column" id="book-details-info">
+            <h2><%= book.title %></h2>
+            <div class="author">
+            <strong>Author:</strong> <%=book.author %>
+            </div>
+            <div class="summary">
+            <strong>Summary:</strong>
+            <p><%= book.summary %></p>
+            </div>
+        </div>
+    
+        <div class="column" id="quotes-wrapper">
+            <h3>Notable Quotes</h3>
+            
+            <% if(book.notableQuotes.length) { %>
+                        <% book.notableQuotes.forEach(q => { %>
+                            <p><%= q.content %></p>
+                            <p>- <%= q.characterName %> (<%= q.pageNum %>)</p>
+                            <hr>
+                        <% }) %>
+            <% } else { %>
+                <strong>No Notable Quotes</strong>
+            <% } %>
+
+            <form action="/books/<%= book._id %>/quotes" method="POST">
+
+            <div class="form-content">  
+                <label for="content">Quote:</label>
+                     <textarea id="content" name="content" cols="20" rows="3" required></textarea>
+                <br>
+                <label for="characterName">Character:</label>
+                    <input id="characterName" type="text" name="characterName">
+                <br>
+                <label for="pageNum">Page Number:</label>
+                    <input id="pageNum" type="number" name="pageNum">
+                <button type="submit">Add Quote</button>
+            </form>
+        </div>
+</section>
+<div class="content-wrapper">
+    <section class="reviews-wrapper">
+        <div class="form-content">
+        <h3 >Reviews</h3>
+
+        <% if(book.reviews.length) { %>
+            <% let total = 1 %>
+                    <% book.reviews.forEach(r => { %>
+                        <p>User <%= total %>: "<%= r.content %>"
+                            <% for (let i = 1; i <= r.rating; i++ ) { %>
+                            &starf; <% } %>
+                        <% total++ %>
+                    <% }) %> </p>
+        <% } else { %>
+            <h5 class="form-title">No Reviews Yet</h5>
+        <% } %>
+
+        <form action="/books/<%= book._id %>/reviews" method="POST">
+          
+            <label>
+                Review:
+                <textarea name="content" cols="40" rows="3" required></textarea>
+            </label>
+            <label>
+                Rating
+                <select id="rating-select" name="rating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5" selected>5</option>
+                </select>
+            </label>
+            <button type="submit">Add Review</button>
+        </form>
+        </div>
+    </section>
+</div>
+    <%- include('../partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,303 @@
+*{
+    color: #2f3030;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #FAEFE4;
+}
+
+.title-wrapper {
+    background-color: #D9826B;
+    padding: 15px;
+}
+
+nav {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+header h1 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+header h1 a{
+    color: #2f3030;
+    font-size: 36px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+header nav{
+    padding: 15px 0;
+    background-color: #FAEFE4;
+    border-top: 2px solid #D9826B;
+    margin-top: -15px;
+}
+
+header nav a {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: #2f3030;
+    font-size: 15px;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: small;
+    padding: 10px;
+}
+
+#book-index ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 10;
+    margin: 10;
+    margin-top: 30px;
+}
+
+#book-index li {
+    flex: 0 0 calc(20% - 50px);
+    margin: 20px;
+    box-sizing: border-box;
+}
+
+#book-index img {
+    border: 5px solid #9EC0C2;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #9EC0C2;
+}
+
+.book-details{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color:rgb(201, 219, 220, 0.7);
+    padding: 20px;
+}
+
+.column {
+    flex: 33.33%;
+  
+ }
+
+ .column:first-child {
+    margin-right: -25%;
+ }
+
+.book-details-info {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+} 
+
+#book-details-info h2{
+    margin-bottom: 15px;
+}
+
+.author {
+    margin-bottom: 15px;
+}
+
+.summary {
+    margin-bottom: 15px;
+}
+
+.book-details img {
+    border: 5px solid #9EC0C2;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #9EC0C2;
+    width: 175px;
+    height: 275px;
+}
+
+#newbookContent {
+    border-radius: 5px;
+    background-color:rgb(201, 219, 220, 0.7);
+    padding: 20px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#newbookContent input[type=text], #newbookContent select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#newbookContent button[type=submit] {
+    width: 100%;
+    background-color: #D9826A;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+#newbookContent button[type=submit]:hover {
+    background-color: #B15044;
+  }
+
+#newbookContent input::file-selector-button {
+    background-color: #D9826A;
+    color: white;
+    padding: 10px 18px;
+    margin: 4px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#newbookContent input::file-selector-button:hover {
+    background-color:  #B15044;
+}
+
+#quotes-wrapper {
+    font-size: smaller;
+}
+
+#quotes-wrapper > h4 {
+    margin-bottom: 7px;
+}
+
+#quotes-wrapper p {
+    font-style: italic;
+}
+
+#quotes-wrapper hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#quotes-wrapper button[type=submit] {
+    font-size: smaller;
+    background-color: #D9826A;
+    color: white;
+    padding: 5px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+   
+}
+
+#quotes-wrapper button[type=submit]:hover {
+    background-color:  #B15044;
+}
+
+.reviews-wrapper {
+    padding: 20px;
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    justify-content: center;
+}
+
+.reviews-wrapper > * {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.reviews-wrapper button[type=submit] {
+    font-size: smaller;
+    background-color: #D9826A;
+    color: white;
+    padding: 5px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.reviews-wrapper button[type=submit]:hover {
+    background-color:  #B15044;
+}
+
+#rating-select {
+    width: 20px;
+}
+
+/* this is new right here */
+form label {
+    display: block;
+    margin-top: 10px;
+}
+
+form textarea,
+form input {
+    display: block;
+    margin-top: 5px;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* working here  */
+
+.reviews-wrapper{
+    padding: 20px;
+    width: 50%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.reviews-wrapper form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    /* margin-top: 20px; */
+}
+
+ .form-content {
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+}
+
+.form-content label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-content label:last-child {
+    margin-bottom: 0;
+}
+
+.form-title {
+    display: inline-block;
+    text-align: left;
+    width: 100%;
+ 
+} 
+
