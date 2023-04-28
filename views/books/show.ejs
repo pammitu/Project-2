@@ -57,8 +57,12 @@
             <% let total = 1 %>
                     <% book.reviews.forEach(r => { %>
                         <p>User <%= total %>: "<%= r.content %>"
-                            <% for (let i = 1; i <= r.rating; i++ ) { %>
+                            <% for (let i = 0; i <= r.rating; i++ ) { %>
                             &starf; <% } %>
+                            <form method="POST" action="/books/<%= book._id %>?_method=DELETE" class="delete-form">
+                                <button type="submit">X</button>
+                            </form>
+                            
                         <% total++ %>
                     <% }) %> </p>
         <% } else { %>
