@@ -21,7 +21,7 @@
         </div>
     
         <div class="column" id="quotes-wrapper">
-            <h4>Notable Quotes</h4>
+            <h3>Notable Quotes</h3>
             
             <% if(book.notableQuotes.length) { %>
                         <% book.notableQuotes.forEach(q => { %>
@@ -34,26 +34,24 @@
             <% } %>
 
             <form action="/books/<%= book._id %>/quotes" method="POST">
-                <label>
-                    Quote: <textarea name="content" cols="20" rows="3" required></textarea>
-                </label>
+
+            <div class="form-content">  
+                <label for="content">Quote:</label>
+                     <textarea id="content" name="content" cols="20" rows="3" required></textarea>
                 <br>
-                <label>
-                    Character:
-                    <input type="text" name="characterName">
-                </label>
+                <label for="characterName">Character:</label>
+                    <input id="characterName" type="text" name="characterName">
                 <br>
-                <label>
-                    Page Number:
-                    <input type="number" name="pageNum">
-                </label>
+                <label for="pageNum">Page Number:</label>
+                    <input id="pageNum" type="number" name="pageNum">
                 <button type="submit">Add Quote</button>
             </form>
         </div>
 </section>
-
+<div class="content-wrapper">
     <section class="reviews-wrapper">
-        <h3>Reviews</h3>
+        <div class="form-content">
+        <h3 >Reviews</h3>
 
         <% if(book.reviews.length) { %>
             <% let total = 1 %>
@@ -63,16 +61,15 @@
                             &starf; <% } %>
                         <% total++ %>
                     <% }) %> </p>
-                </tbody>
-            </table>
         <% } else { %>
-            <h5>No Reviews Yet</h5>
+            <h5 class="form-title">No Reviews Yet</h5>
         <% } %>
 
         <form action="/books/<%= book._id %>/reviews" method="POST">
+          
             <label>
                 Review:
-                <textarea name="content" cols="20" rows="3" required></textarea>
+                <textarea name="content" cols="40" rows="3" required></textarea>
             </label>
             <label>
                 Rating
@@ -86,8 +83,9 @@
             </label>
             <button type="submit">Add Review</button>
         </form>
+        </div>
     </section>
-
+</div>
     <%- include('../partials/footer') %>
 </body>
 </html>
