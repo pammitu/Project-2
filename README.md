@@ -49,17 +49,18 @@ The images below show how we designed our application, we had some trouble tryin
 
 ![ERD](./public/images/project2ERD.png)
 
+![Trello Board](./public/images/Trello%20Board.png)
 
 A user will be able to start on the home page with the index of current books on the website. From there they can choose a book they are interested in learning about or a book that they have already read. Once they click on the book cover they are interested in they will be redirected to another page where they can see the  Title, Author, and Summary of the book. There may be some reviews and notable quotes already on the page if the book has been there for a while and they can choose to add, edit or delete the reviews and notable quotes.
 
-###Example Site Pictures:
+### Example Site Pictures:
 <hr style="border: 1px solid #ccc">
 
-![My Image](/images/my-image. png)
+![Books Index](./public/images/booksIndex.png)
 
-![My Image](/images/my-image. png)
+![Book Show](./public/images/bookShowPage.png)
 
-![My Image](/images/my-image. png)
+![New Submission](./public/images/newSubmissionPage.png)
 
 ## Technologies Used
 <hr style="border: 1px solid #ccc">
@@ -72,12 +73,9 @@ A user will be able to start on the home page with the index of current books on
 * HTML
 * CSS
 
-## Coding Challenges
+## Next Steps
 <hr style="border: 1px solid #ccc">
 
-NEED ADDITIONAL INFO HERE!
-
-## Next Steps
 *Add user authentication so user's can save their added books
 *Implement search functionality with additional filters
 *Integrate an external book review API for more comprehensive book data
