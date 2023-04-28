@@ -22,7 +22,7 @@ Book Club is a full-stack web application which allows users to browse, and revi
 
 ## Getting Started
 
-To checkout the app, simly visit the [deployed website.](URL)
+To checkout the app, simly visit the [deployed website.](https://immense-river-09934.herokuapp.com/books)
 
 You can also view the project's planning board on [Trello.](https://trello.com/invite/b/J2F5D3H0/ATTI65091d5a24ee8b844a650b56ad6602136DA3A27F/project-2)
 
