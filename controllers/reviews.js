@@ -15,11 +15,11 @@ async function create(req, res) {
 
 async function deleteReview(req, res) {
     try {
-        const foundBook = await Book.findById(req.params.id);
-
-        foundBook.reviews.delete(req.body);
+        const foundBook = await Book.findOne({ 'reviews._id': req.params.id });
+        if (!foundBook) return res.redirect('/books');
+        foundBook.reviews.remove(req.params.id);
+       
         await foundBook.save();
-
         res.redirect(`/books/${foundBook._id}`);
     } catch (error) {
         console.log(error);

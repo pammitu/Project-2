@@ -1,5 +1,6 @@
 const express = require('express');
 const logger = require('morgan');
+const methodOverride = require('method-override');
 
 const booksRoutes = require('./routes/books');
 const reviewsRoutes = require('./routes/reviews')
@@ -19,9 +20,9 @@ require('./config/database');
 app.use(logger('dev'));
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false })); // this creates req.body from an HTML form submission
+app.use(methodOverride('_method'));
 
 // mount routes
-
 app.get('/', (req, res) => {
     res.redirect('/books');
 });

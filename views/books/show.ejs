@@ -54,16 +54,16 @@
         <h3 >Reviews</h3>
 
         <% if(book.reviews.length) { %>
-            <% let total = 1 %>
+            <% let user = 1 %>
                     <% book.reviews.forEach(r => { %>
-                        <p>User <%= total %>: "<%= r.content %>"
+                        <p>User <%= user %>: "<%= r.content %>"
                             <% for (let i = 0; i <= r.rating; i++ ) { %>
                             &starf; <% } %>
-                            <form method="POST" action="/books/<%= book._id %>?_method=DELETE" class="delete-form">
+                            <form action="/books/<%= book._id %>/reviews/<%= r._id %>?_method=DELETE" method="POST">
                                 <button type="submit">X</button>
                             </form>
                             
-                        <% total++ %>
+                        <% user++ %>
                     <% }) %> </p>
         <% } else { %>
             <h5 class="form-title">No Reviews Yet</h5>
