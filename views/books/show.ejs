@@ -11,12 +11,12 @@
         
         <div class="column" id="book-details-info">
             <h2><%= book.title %></h2>
+
             <div class="author">
-            <strong>Author:</strong> <%=book.author %>
+                <strong>Author:</strong> <%= book.author %>
             </div>
             <div class="summary">
-            <strong>Summary:</strong>
-            <p><%= book.summary %></p>
+                <strong>Summary:</strong> <%= book.summary %>
             </div>
         </div>
     
@@ -24,11 +24,11 @@
             <h3>Notable Quotes</h3>
             
             <% if(book.notableQuotes.length) { %>
-                        <% book.notableQuotes.forEach(q => { %>
-                            <p><%= q.content %></p>
-                            <p>- <%= q.characterName %> (<%= q.pageNum %>)</p>
-                            <hr>
-                        <% }) %>
+                <% book.notableQuotes.forEach(q => { %>
+                    <p><%= q.content %></p>
+                    <p>- <%= q.characterName %> (<%= q.pageNum %>)</p>
+                    <hr>
+                    <% }) %>
             <% } else { %>
                 <strong>No Notable Quotes</strong>
             <% } %>
@@ -37,7 +37,7 @@
 
             <div class="form-content">  
                 <label for="content">Quote:</label>
-                     <textarea id="content" name="content" cols="20" rows="3" required></textarea>
+                    <textarea id="content" name="content" cols="20" rows="3" required></textarea>
                 <br>
                 <label for="characterName">Character:</label>
                     <input id="characterName" type="text" name="characterName">
