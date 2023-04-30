@@ -1,4 +1,4 @@
-*{
+* {
     color: #2f3030;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 0;
@@ -165,6 +165,7 @@ footer {
     border-radius: 4px;
     cursor: pointer;
 }
+
 #newbookContent input::file-selector-button:hover {
     background-color:  #B15044;
 }
@@ -216,12 +217,15 @@ footer {
     flex-direction: column;
     align-items: flex-start; 
     justify-content: center;
+    padding: 20px;
+    text-align: left;
 }
 
-.reviews-wrapper > * {
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
+.reviews-wrapper form { 
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
 }
 
 .reviews-wrapper button[type=submit] {
@@ -239,6 +243,14 @@ footer {
     background-color:  #B15044;
 }
 
+#delete_btn, #edit_btn {
+    display: inline;
+}
+
+.review-btns {
+    display: inline;
+}
+
 #rating-select {
     width: 20px;
 }
@@ -249,33 +261,9 @@ form label {
     margin-top: 10px;
 }
 
-form textarea,
-form input {
+form textarea, form input {
     display: block;
     margin-top: 5px;
-}
-
-.content-wrapper {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-/* working here  */
-
-.reviews-wrapper{
-    padding: 20px;
-    width: 50%;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.reviews-wrapper form{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    /* margin-top: 20px; */
 }
 
  .form-content {

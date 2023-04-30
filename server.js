@@ -23,10 +23,9 @@ app.use(express.urlencoded({ extended: false })); // this creates req.body from 
 app.use(methodOverride('_method'));
 
 // mount routes
-app.get('/', (req, res) => {
-    res.redirect('/books');
-});
-
+// app.get('/', (req, res) => {
+//     res.redirect('/books');
+// });
 app.use('/books', booksRoutes);
 app.use('/', reviewsRoutes);
 app.use('/', quotesRoutes);
