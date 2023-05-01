@@ -287,3 +287,10 @@ form textarea, form input {
  
 } 
 
+.button-wrapper {
+    display: inline-flex;
+}
+
+.button-container {
+    margin-right: 5px;
+}

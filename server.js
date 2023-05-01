@@ -37,6 +37,6 @@ app.use('*', (req, res) => {
 });
 
 // tell the application to listen for requests
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
     console.log('express is listening on port:3000');
 });

@@ -11,7 +11,7 @@
 * [Technolgies Used](#technologies-used)
 * [Coding Challenges](#coding-challenges)
 * [Next Steps](#next-steps)
-* [Contributions])(#contributions)
+* [Contributions](#contributions)
 
 
 ---
@@ -22,22 +22,22 @@ Book Club is a full-stack web application which allows users to browse, and revi
 
 ## Getting Started
 
-To checkout the app, simly visit the [deployed website.](URL)
+To checkout the app, simly visit the [deployed website.](https://immense-river-09934.herokuapp.com/books)
 
 You can also view the project's planning board on [Trello.](https://trello.com/invite/b/J2F5D3H0/ATTI65091d5a24ee8b844a650b56ad6602136DA3A27F/project-2)
 
 ## MVP Goals 
 <hr style="border: 1px solid #ccc"> 
 
-1.Build a fully functional full-stack web application.
-2.Have full CRUD functionality.
-3.Style a simple homepage displaying the current catalogue  of books.
-4.Create paths for users to be able to find more information about a book by clicking the cover image of the title they want to explore.
-5.Allow users to add their own review for a book.
-6.Allow users to delete their own review for a book.
-7.Allow users to edit their book reviews.
-8.Allow users to add a new book to the catalogue.
-9.Deploy successfully on Heroku
+- 1.Build a fully functional full-stack web application.
+- 2.Have full CRUD functionality.
+- 3.Style a simple homepage displaying the current catalogue  of books.
+- 4.Create paths for users to be able to find more information about a book by clicking the cover image of the title they want to explore.
+- 5.Allow users to add their own review for a book.
+- 6.Allow users to delete their own review for a book.
+- 7.Allow users to edit their book reviews.
+- 8.Allow users to add a new book to the catalogue.
+- 9.Deploy successfully on Heroku
 
 ## Wireframe:
 <hr style="border: 1px solid #ccc">
