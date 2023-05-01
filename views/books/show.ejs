@@ -60,7 +60,8 @@
                             <% for (let i = 0; i < r.rating; i++ ) { %>
                             &starf; <% } %>
                         <p> - User <%= user %> </p> 
-                            
+                            <div class="button-wrapper">
+                                <div class="button-container">
                             <form action="/books/<%= book._id %>/reviews/<%= r._id %>?_method=PUT" method="POST">
                                 <% if (r.editing) { %>
                                     <textarea id="edit_area" name="content" rows="3" cols="40"><%= r.content %></textarea>
@@ -72,10 +73,13 @@
                                     <button id="edit_btn" type="submit">Save Changes</button>
                                 <% } %>
                             </form>
-                            
+                            </div>
+                            <div class="button-container">
                              <form action="/books/<%= book._id %>/reviews/<%= r._id %>?_method=DELETE" method="POST">
                                 <button id="delete_btn" type="submit">Delete</button>
                             </form>
+                        </div>
+                    </div>
                         <% user++ %>
                     <% }) %> </p>
         <% } else { %>
