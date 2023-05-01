@@ -11,12 +11,12 @@
         
         <div class="column" id="book-details-info">
             <h2><%= book.title %></h2>
+
             <div class="author">
-            <strong>Author:</strong> <%=book.author %>
+                <strong>Author:</strong> <%= book.author %>
             </div>
             <div class="summary">
-            <strong>Summary:</strong>
-            <p><%= book.summary %></p>
+                <strong>Summary:</strong> <%= book.summary %>
             </div>
         </div>
     
@@ -24,11 +24,11 @@
             <h3>Notable Quotes</h3>
             
             <% if(book.notableQuotes.length) { %>
-                        <% book.notableQuotes.forEach(q => { %>
-                            <p><%= q.content %></p>
-                            <p>- <%= q.characterName %> (<%= q.pageNum %>)</p>
-                            <hr>
-                        <% }) %>
+                <% book.notableQuotes.forEach(q => { %>
+                    <p><%= q.content %></p>
+                    <p>- <%= q.characterName %> (<%= q.pageNum %>)</p>
+                    <hr>
+                    <% }) %>
             <% } else { %>
                 <strong>No Notable Quotes</strong>
             <% } %>
@@ -37,7 +37,7 @@
 
             <div class="form-content">  
                 <label for="content">Quote:</label>
-                     <textarea id="content" name="content" cols="20" rows="3" required></textarea>
+                    <textarea id="content" name="content" cols="20" rows="3" required></textarea>
                 <br>
                 <label for="characterName">Character:</label>
                     <input id="characterName" type="text" name="characterName">
@@ -47,28 +47,44 @@
                 <button type="submit">Add Quote</button>
             </form>
         </div>
-</section>
-<div class="content-wrapper">
+    </section>
+
     <section class="reviews-wrapper">
         <div class="form-content">
         <h3 >Reviews</h3>
 
         <% if(book.reviews.length) { %>
-            <% let total = 1 %>
+            <% let user = 1 %>
                     <% book.reviews.forEach(r => { %>
-                        <p>User <%= total %>: "<%= r.content %>"
-                            <% for (let i = 1; i <= r.rating; i++ ) { %>
+                        <p> "<%= r.content %>"  &nbsp;
+                            <% for (let i = 0; i < r.rating; i++ ) { %>
                             &starf; <% } %>
-                        <% total++ %>
+                        <p> - User <%= user %> </p> 
+                            
+                            <form action="/books/<%= book._id %>/reviews/<%= r._id %>?_method=PUT" method="POST">
+                                <% if (r.editing) { %>
+                                    <textarea id="edit_area" name="content" rows="3" cols="40"><%= r.content %></textarea>
+                                <% } %>
+
+                                <% if (!r.editing) { %>
+                                    <button id="edit_btn" type="submit">Edit</button> 
+                                <% } else { %>
+                                    <button id="edit_btn" type="submit">Save Changes</button>
+                                <% } %>
+                            </form>
+                            
+                             <form action="/books/<%= book._id %>/reviews/<%= r._id %>?_method=DELETE" method="POST">
+                                <button id="delete_btn" type="submit">Delete</button>
+                            </form>
+                        <% user++ %>
                     <% }) %> </p>
         <% } else { %>
             <h5 class="form-title">No Reviews Yet</h5>
         <% } %>
 
         <form action="/books/<%= book._id %>/reviews" method="POST">
-          
             <label>
-                Review:
+                Add Your Review Here:
                 <textarea name="content" cols="40" rows="3" required></textarea>
             </label>
             <label>
@@ -85,7 +101,7 @@
         </form>
         </div>
     </section>
-</div>
+
     <%- include('../partials/footer') %>
 </body>
 </html>
