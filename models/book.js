@@ -23,7 +23,11 @@ const reviewSchema = new Schema({
         min: 1,
         max: 5,
         default: 5
-    } 
+    },
+    editing: {
+        type: Boolean,
+        default: false
+    }
 }, { timestamps: true });
 
 const bookSchema = new Schema({
@@ -31,7 +35,7 @@ const bookSchema = new Schema({
         type: String
     },
     title: {
-         type: String,
+        type: String,
         required: true
      },
     author: {
